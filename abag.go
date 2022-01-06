@@ -1,12 +1,14 @@
 package abag
 
 func Solution(a []int) int {
+	// check if trees are already pleasing before cutting
 	if isAestheticallyPleasing(a) {
 		return 0
 	}
 
-	count := 0
-	for i := 0; i < len(a); i++ {
+	count := 0 // init count
+	for i := 0; i < len(a); i++ { // iterate through trees
+		// Check if the condition passes if the tree at i is removed
 		if isAestheticallyPleasing(removeIndex(a, i)) {
 			count++
 		}
@@ -16,6 +18,7 @@ func Solution(a []int) int {
 		return count
 	}
 
+	// no condition passed after cutting down exactly one tree
 	return -1
 }
 
