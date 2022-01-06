@@ -12,7 +12,7 @@ func Solution(a []int) int {
 		return 0
 	}
 
-	count := 0                    // init count
+	count := 0 // init count
 	for i := 0; i < len(a); i++ { // iterate through trees
 		// Check if the condition passes if the tree at i is removed
 		if isAestheticallyPleasing(removeIndex(a, i)) {
@@ -41,13 +41,8 @@ func isAestheticallyPleasing(tree []int) bool {
 
 func removeIndex(s []int, i int) []int {
 	newSlice := make([]int, len(s)-1)
-	for index := 0; index < len(newSlice); index++ {
-		if index < i {
-			newSlice[index] = s[index]
-			continue
-		}
+	copy(newSlice[:i], s[:i])
+	copy(newSlice[i:], s[i+1:])
 
-		newSlice[index] = s[index+1]
-	}
 	return newSlice
 }
