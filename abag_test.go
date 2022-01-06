@@ -96,6 +96,14 @@ func Test_removeIndex(t *testing.T) {
 			"remove element at third index",
 			args{[]int{4, 7, 2, 1}, 3},
 			[]int{4, 7, 2},
+		}, {
+			"remove element at second index",
+			args{[]int{4, 7, 2, 1}, 2},
+			[]int{4, 7, 1},
+		}, {
+			"remove element at first index",
+			args{[]int{4, 7, 2, 1}, 1},
+			[]int{4, 2, 1},
 		},
 	}
 	for _, tt := range tests {
