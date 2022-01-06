@@ -37,6 +37,6 @@ func Solution(a []int) int
     Solution returns the number of ways of cutting out one tree if given an
     array a consisting of n integers, where A[K] denotes the height of the K-th
     tree, so that the remaining trees are aesthetically pleasing. If it is not
-    possible to achieve the desired result, your function should return −1. If
-    the trees are already aesthetically pleasing without any removal,
+    possible to achieve the desired result, it returns −1. If
+    the trees are already aesthetically pleasing without any removal then it returns 0.
 ```
